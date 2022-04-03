@@ -6,13 +6,15 @@ on:
 
 jobs:
 
-  build:
+  lint-code:
 
     runs-on: ubuntu-latest
 
     steps: 
-      -uses: actions/checkout@v3
-      -name: Lint the python code
-       uses: github/super-linter:slim@v4
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Lint the python code
+        uses: github/super-linter:slim-v4
 
   
