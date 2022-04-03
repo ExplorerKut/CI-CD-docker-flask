@@ -2,7 +2,7 @@ import os
 from flask import Flask
 
 app = Flask(__name__)
-app.config["CUSTOM_MESSAGE"] = os.environ.get("CUSTOM_MESSAGE')
+app.config["CUSTOM_MESSAGE"] = os.environ.get("CUSTOM_MESSAGE")
 
 @app.route("/")
 def index():
