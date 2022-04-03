@@ -23,8 +23,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+      - name: Checkout the code
+        uses: actions/checkout@v3
       - name: Create docker image
-        run: docker build . --file ../Dockerfile --tag flask-docker-web-app
+        run: docker build --file Dockerfile --tag flask-docker-web-app .
 
   
