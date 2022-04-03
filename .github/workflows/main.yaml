@@ -17,6 +17,8 @@ jobs:
 
       - name: Lint the python code
         uses: github/super-linter/slim@v4
+        env:
+          VALIDATE_GITHUB_ACTIONS: false
   
   build-push-image:
     needs: build
