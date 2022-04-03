@@ -25,6 +25,6 @@ jobs:
     steps:
 
       - name: Create docker image
-        run: docker build . --file ../../Dockerfile --tag flask-docker-web-app
+        run: docker build . --file ../Dockerfile --tag flask-docker-web-app
 
   
