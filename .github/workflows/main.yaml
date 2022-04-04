@@ -54,7 +54,7 @@ jobs:
         env:  
           # ECS_SERVICE: sample-app-service
           # ECS_CLUSTER: default
-          ECS_TASK_DEFINITION: .aws/ecs-task-definition.json
+          ECS_TASK_DEFINITION: ecs-task-definition.json
           CONTAINER_NAME: sample-app
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
