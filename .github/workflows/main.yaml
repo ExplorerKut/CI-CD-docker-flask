@@ -51,12 +51,12 @@ jobs:
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
         env:  
           # ECS_SERVICE: sample-app-service
           # ECS_CLUSTER: default
           ECS_TASK_DEFINITION: ecs-task-definition.json
           CONTAINER_NAME: sample-app
-        id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with: 
           task-definition: ${ECS_TASK_DEFINITION}
