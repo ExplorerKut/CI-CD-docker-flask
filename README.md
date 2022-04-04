@@ -8,7 +8,7 @@ A CI/CD pipeline which deploys a docker image to ECR, lints the python code and 
 
 ## Define Your custom message using the CUSTOM_MESSAGE environment variable in the my-env.txt file
 
-#### CUSTOM_MESSAGE="Any message you like"
+### CUSTOM_MESSAGE="Any message you like"
 
 ## To run and start the docker container pass the environment variable file to the container
 
@@ -17,12 +17,12 @@ A CI/CD pipeline which deploys a docker image to ECR, lints the python code and 
 ## CI/CD using Github Actions
 
 <p>
-For the purpose of linting the codebase a github action named super-linter has been used for linting the entire codebases, the linter can handle
+For the purpose of linting the codebase a GitHub action named super-linter has been used for linting the entire codebases, the linter can handle
 languages like python, javascript, yaml and many more.
 
-# main.yaml
+### main.yaml
 
-```
+```yaml
 
     name: Test and Deploy Image
 
@@ -79,18 +79,18 @@ languages like python, javascript, yaml and many more.
 A workflow containing different jobs has been created, the jobs are discussed below:
 
 <p>
-<ol>
-<li>Lint Code base</li>
-<ol>
-<li>Checkout the repository for workflow access</li>
-<li>Uses the super-linter action from the github marketplace and scans the code for any linting errors</li>
-</ol>
-<li>build and push docker image to amazon ecr
-<ol>
-<li>This job requires the code to be linted first</li>
-<li>Configure aws credentials by providing access key and secret key as secrets in github actions</li>
-<li>Build the image and publish to private ECR repository</li>
-</ol>
-</ol>
-</p>
+    <ol>
+        <li>Lint Code base</li>
+            <ol>
+                <li>Checkout the repository for workflow access</li>
+                <li>Uses the super-linter action from the GitHub marketplace and scans the code for any linting errors</li>
+            </ol>
+        <li>build and push docker image to amazon ecr
+            <ol>
+                <li>This job requires the code to be linted first</li>
+                <li>Configure aws credentials by providing access key and secret key as secrets in GitHub actions</li>
+                <li>Build the image and publish to private ECR repository</li>
+            </ol>
+    </ol>
+
 </p>
