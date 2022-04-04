@@ -14,7 +14,7 @@ A CI/CD pipeline which deploys a docker image to ECR, lints the python code and 
 
 ### => docker run -p 5000:5000 --env-file my-env.txt "name-of-image"
 
-## CI/CD using Github Actions
+## CI/CD using GitHub Actions
 
 <p>
 For the purpose of linting the codebase a GitHub action named super-linter has been used for linting the entire codebases, the linter can handle
