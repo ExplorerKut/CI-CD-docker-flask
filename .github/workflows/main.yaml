@@ -59,14 +59,11 @@ jobs:
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
-        env: 
-          ECS_SERVICE: sample-app-service
-          ECS_CLUSTER: default
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with: 
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ ECS_SERVICE }}
-          cluster: ${{ ECS_CLUSTER }}
+          service: sample-app-service
+          cluster: default
           wait-for-service-stability: false
      
   
