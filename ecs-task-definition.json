@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/flask-task-definition",
+          "awslogs-group": "/ecs/flask-web-task-definition",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -37,7 +37,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "897875300342.dkr.ecr.us-east-2.amazonaws.com/flask-docker-web-app",
+      "image": "897875300342.dkr.ecr.us-east-1.amazonaws.com/flask-docker-web-app:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -59,13 +59,13 @@
   ],
   "placementConstraints": [],
   "memory": "512",
-  "taskRoleArn": "arn:aws:iam::897875300342:role/ecsTaskExecutionRole",
+  "taskRoleArn": null,
   "compatibilities": [
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:897875300342:task-definition/flask-task-definition:1",
-  "family": "flask-task-definition",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:897875300342:task-definition/flask-web-task-definition:1",
+  "family": "flask-web-task-definition",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -90,12 +90,6 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.task-iam-role"
     },
     {
       "targetId": null,
