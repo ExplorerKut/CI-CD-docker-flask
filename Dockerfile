@@ -1,6 +1,6 @@
 #using python 3.8
 FROM python:3.8-slim-buster
-
+ENV CUSTOM_MESSAGE "HELLO_OPSLYFT"
 WORKDIR /flask-docker
 
 COPY requirements.txt requirements.txt

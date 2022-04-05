@@ -52,11 +52,6 @@ jobs:
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
-        env:  
-          # ECS_SERVICE: sample-app-service
-          # ECS_CLUSTER: default
-          ECS_TASK_DEFINITION: ecs-task-definition.json
-          CONTAINER_NAME: sample-app
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with: 
           task-definition: ecs-task-definition.json
@@ -65,13 +60,13 @@ jobs:
 
       - name: Deploy Amazon ECS task definition
         env: 
-          ECS_SERVICE: sample-app-service
+          ECS_SERVICE: "sample-app-service"
           ECS_CLUSTER: "default"
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with: 
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: sample-app-service
-          cluster: default
-          wait-for-service-stability: true
+          service: ${ECS_SERVICE}
+          cluster: ${ECS_CLUSTER}
+          wait-for-service-stability: false
      
   
